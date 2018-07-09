@@ -51,10 +51,10 @@ print hash.values.sort
 # { a: 1, b: 2, c: 3 } => { "1"=>"a", "2"=>"b", "3"=>"c" }
 
 hash = { a: 1, b: 2, c: 3 }
-new_hash = {}
 
-new_hash = hash.invert
-print new_hash
+print hash.invert.inject({}) { |thing, (k, v)| thing[k.to_s] = v.to_s; thing }
+
+
 
 
 
